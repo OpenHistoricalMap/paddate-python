@@ -20,7 +20,7 @@ paddate.paddate('1900-02', time='end')  # leap years are supported
 paddate.paddate('2000-02', startend='end')
 
 paddate.paddate('-1000000-02')
-paddate.paddate('-1000000-02', startend='end')
+paddate.paddate('-1000000-02', startend='end')  # leap years are supported way back!
 paddate.paddate('-999999-02')
 paddate.paddate('-999999-02', startend='end')
 ```

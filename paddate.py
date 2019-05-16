@@ -12,7 +12,7 @@ RE_YEARONLY = re.compile(r'^(\-?\+?)(\d+)$')
 
 def paddate(datestring, startend='start'):
     if startend not in ('start', 'end'):
-        raise ValueError("The v parameter must be 'start' or 'end'")
+        raise ValueError("The startend parameter must be 'start' or 'end'")
 
     if re.match(RE_YEARMONTHDAY, datestring):  # already yyyy-mm-dd so return as-is
         return datestring
