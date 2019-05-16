@@ -9,6 +9,7 @@ RE_YEARMONTHDAY = re.compile(r'^(\-?\+?)(\d+)\-(\d\d)\-(\d\d)$')
 RE_YEARMONTH = re.compile(r'^(\-?\+?)(\d+)\-(\d\d)$')
 RE_YEARONLY = re.compile(r'^(\-?\+?)(\d+)$')
 
+
 def paddate(datestring, startend='start'):
     if startend not in ('start', 'end'):
         raise ValueError("The v parameter must be 'start' or 'end'")
@@ -23,7 +24,7 @@ def paddate(datestring, startend='start'):
         (plusminus, yearstring, monthstring) = isyearmonth.groups()
 
         if not _isvalidmonth(monthstring):
-            raise ValueError("Month {} is not 01 through 12".format(monthnumber))
+            raise ValueError("Month {} is not 01 through 12".format(monthstring))
 
         return _padyearandmonth(plusminus, yearstring, monthstring, startend)
     elif isyearonly:
@@ -44,7 +45,7 @@ def _padyearonly(plusminus, yearstring, startend):
 
 
 def _isvalidmonth(monthstring):
-    validmonths = ('01','02','03','04','05','06','07','08','09','10','11','12')
+    validmonths = ('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12')
     return monthstring in validmonths
 
 
